@@ -16,22 +16,10 @@
 		<ActiveObjectClass>
 			<Id>1708089002140</Id>
 			<Name><![CDATA[Main]]></Name>
-			<StartupCode><![CDATA[//sampling
-//fSampling();
+			<StartupCode><![CDATA[// sampling
+fSampling();;
 
-//fSolution();;
-
-for (Population o: Population) {
-	traceln("step1");
-	o.vSite = o.getNearestAgentByRoute(Population);
-	
-	o.connectTo(o.vSite);
-	
-	o.updateODRoute(); // show route
-}
-
-//function();
-//read solver
+// read solver
 //solver();]]></StartupCode>
 			<Generic>false</Generic>
 			<GenericParameter>
@@ -310,11 +298,10 @@ for (Population o: supplier) {
 					<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
 					<AgentLinkBidirectional>true</AgentLinkBidirectional>
 					<MessageType><![CDATA[Object]]></MessageType>
-					<DrawLine>true</DrawLine>
 					<LineStyle>SOLID</LineStyle>
 					<LineWidth>1</LineWidth>
 					<LineColor>-16777216</LineColor>
-					<LineZOrder>ABOVE_AGENTS</LineZOrder>
+					<LineZOrder>UNDER_AGENTS</LineZOrder>
 					<LineArrow>NONE</LineArrow>
 					<LineArrowPosition>END</LineArrowPosition>
 				</AgentLink>
@@ -1167,18 +1154,18 @@ for (Population o: supplier) {
 	if (odRoute != null)
 		odRoute.setVisible(false);
 
-	//traceln(city + ", " + state_name + " - " + site.city + ", " + state_name + " = " + this.getDistanceGIS(getLatitude(), getLongitude(), site.getLatitude(), site.getLongitude()));
+	// traceln(city + ", " + state_name + " - " + site.city + ", " + state_name + " = " + this.getDistanceGIS(getLatitude(), getLongitude(), site.getLatitude(), site.getLongitude()));
 	// traceln("  WRONG Distance via XY:" + this.getDistance(getX(), getY(), site.getX(), site.getY()));
 	// traceln("  Lat-Lon info:" + lat + "," + lon + ":" + site.lat + "," + site.lon);
 
 	odRoute = main.map.getRoute(getLatitude(), getLongitude(), vSite.getLatitude(), vSite.getLongitude());
 	
 	if (odRoute == null) return;
-	traceln("step1");
+	
 	if (odRoute.length(MILE) > 1) {
 		odRoute.setLineColor(red); // active red
 		odRoute.setLineStyle(LINE_STYLE_SOLID);
-		odRoute.setLineWidth(2);
+		odRoute.setLineWidth(1);
 		odRoute.setVisible(true);
 	}
 
@@ -1890,6 +1877,10 @@ return sites;]]></Body>
 		</SimulationExperiment>	
 	</Experiments>
 	<ModelResources>
+		<Resource>
+			<Path><![CDATA[TownGCoordinates copy.xlsx]]></Path>
+			<ReferencedFromUserCode>false</ReferencedFromUserCode>
+		</Resource>
 		<Resource>
 			<Path><![CDATA[TownGCoordinates.xlsx]]></Path>
 			<ReferencedFromUserCode>false</ReferencedFromUserCode>
