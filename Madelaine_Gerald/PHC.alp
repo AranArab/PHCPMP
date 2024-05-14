@@ -21,16 +21,16 @@
 
 //fSolution();;
 
-pyCommunicator.run("print('hello')");
+//pyCommunicator.run("print('hello')");
 
-for (Population o: Population) {
-	traceln("step1");
-	o.vSite = o.getNearestAgentByRoute(Population);
+//for (Population o: Population) {
+//	traceln("step1");
+//	o.vSite = o.getNearestAgentByRoute(Population);
 	
-	o.connectTo(o.vSite);
+//	o.connectTo(o.vSite);
 	
-	o.updateODRoute(); // show route
-}
+//	o.updateODRoute(); // show route
+//}
 
 //function();
 //read solver
@@ -421,26 +421,6 @@ for (Population o: supplier) {
 					<ParameterToDatabaseColumnMapping>
 						<Item>
 							<Key>
-								FAKE_PARAMETER_GIS_LOCATION_LATITUDE_xjal
-							</Key>
-							<Value>
-								<PackageName><![CDATA[phc]]></PackageName>
-								<ClassName><![CDATA[hoja1]]></ClassName>
-								<ItemName><![CDATA[latitud]]></ItemName>
-							</Value>
-						</Item>
-						<Item>
-							<Key>
-								FAKE_PARAMETER_GIS_LOCATION_LONGITUDE_xjal
-							</Key>
-							<Value>
-								<PackageName><![CDATA[phc]]></PackageName>
-								<ClassName><![CDATA[hoja1]]></ClassName>
-								<ItemName><![CDATA[longitud]]></ItemName>
-							</Value>
-						</Item>
-						<Item>
-							<Key>
 								<PackageName><![CDATA[phc]]></PackageName>
 								<ClassName><![CDATA[Population]]></ClassName>
 								<ItemName><![CDATA[lat]]></ItemName>
@@ -634,7 +614,7 @@ for (Population o: supplier) {
 					<LocationNameCode Class="CodeValue">
 						<Code><![CDATA[""]]></Code>
 					</LocationNameCode>
-					<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+					<InitializationType>EMPTY</InitializationType>
 					<InitializationDatabaseTableQuery>
 						<TableReference>
 						</TableReference>
